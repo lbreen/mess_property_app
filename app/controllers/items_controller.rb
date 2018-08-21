@@ -1,5 +1,8 @@
 class ItemsController < ApplicationController
+  before_action :find_item, only: [ :show, :create, :edit, :update, :destroy ]
+
   def index
+    @items = policy_scope(Item)
   end
 
   def new
@@ -15,5 +18,11 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def find_item
+    @item = Item.find(params[:id])
   end
 end
