@@ -3,7 +3,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
     create_table :items do |t|
       t.string :name
       t.string :location
-      t.integer :reference_number
+      t.string :reference_number
       t.text :comments
       t.references :user, foreign_key: true
 

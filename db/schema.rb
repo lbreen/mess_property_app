@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2018_08_21_142842) do
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.string "location"
-    t.integer "reference_number"
+    t.string "reference_number"
     t.text "comments"
     t.bigint "user_id"
     t.datetime "created_at", null: false

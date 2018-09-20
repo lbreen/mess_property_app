@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :find_item, only: [ :show, :create, :edit, :update, :destroy ]
+  before_action :find_item, only: [ :show, :edit, :update, :destroy ]
+  before_action :item_locations, only: [ :new, :create ]
 
   def index
     @items = policy_scope(Item)
@@ -11,6 +12,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+
   end
 
   def create
@@ -39,5 +41,15 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :location, :reference_number, :comments)
+  end
+
+  def item_locations
+    @locations = [
+    'Dining Room',
+    'Hallway',
+    'Main Entrance',
+    'Bar',
+    'Presentation room'
+  ]
   end
 end
