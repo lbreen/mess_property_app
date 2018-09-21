@@ -1,0 +1,18 @@
+<div class="container padded">
+  <div class="row">
+    <div class="col-xs-12 text-right">
+      <%= link_to "Add new item", new_item_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <% @items.each do |item| %>
+        <strong><%= link_to item.name, item_path(item) %></strong>
+        <ul>
+          <li>Location: <%= item.location %></li>
+          <li>Ref number: <%= item.reference_number %></li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</div>

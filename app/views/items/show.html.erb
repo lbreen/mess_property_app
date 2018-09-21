@@ -1,0 +1,20 @@
+<div class="container padded">
+  <div class="row">
+    <div class="col-xs-12">
+      <%= link_to 'All items', items_path %>
+    </div>
+    <div class="col-xs-12">
+      <h1><%= @item.name %></h1>
+    </div>
+    <div class="col-xs-6">
+      <h1>PHOTO</h1>
+    </div>
+    <div class="col-xs-6">
+      <ul>
+        <li>Location: <%= @item.location %></li>
+        <li>Ref number: <%= @item.reference_number %></li>
+        <li>Comments: <%= @item.comments %></li>
+      </ul>
+    </div>
+  </div>
+</div>
