@@ -12,25 +12,37 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-
+    authorize @item
   end
 
   def create
-    item = Item.new(item_params)
-    item.user = current_user
-    if item.save
-      redirect_to item_path(item)
+    @item = Item.new(item_params)
+    @item.user = current_user
+    authorize @item
+    if @item.save
+      redirect_to item_path(@item)
+    else
+      render :new
     end
-
   end
 
   def edit
+    authorize @item
   end
 
   def update
+    authorize @item
+    if @item.update(item_params)
+      redirect_to item_path(@item)
+    else
+      render :edit
+    end
   end
 
   def destroy
+    authorize @item
+    @item.destroy
+    redirect_to items_path
   end
 
   private
@@ -45,11 +57,11 @@ class ItemsController < ApplicationController
 
   def item_locations
     @locations = [
-    'Dining Room',
-    'Hallway',
-    'Main Entrance',
-    'Bar',
-    'Presentation room'
-  ]
+      'Dining Room',
+      'Hallway',
+      'Main Entrance',
+      'Bar',
+      'Presentation room'
+    ]
   end
 end

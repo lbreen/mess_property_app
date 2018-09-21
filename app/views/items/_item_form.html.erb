@@ -3,7 +3,7 @@
 
    <%= f.input :name %>
    <%= f.input :reference_number %>
-   <%= f.input :location, collection: @locations %>
+   <%= f.input :location, collection: @locations, prompt: "Please select a location" %>
    <%= f.input :comments, placeholder: "Brief explanation of the item and significance to the regiment" %>
 
    <%= f.button :submit, class: "btn btn-primary" %>

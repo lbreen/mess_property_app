@@ -9,5 +9,7 @@ class Item < ApplicationRecord
     'Presentation room'
   ]
 
-  validates :location, inclusion: { in: locations }
+  validates :name, presence: true, uniqueness: true
+  validates :reference_number, uniqueness: true
+  validates :location, presence: true, inclusion: { in: locations }
 end
