@@ -18,6 +18,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.user = current_user
+    @item.reference_number.upcase!
     authorize @item
     if @item.save
       redirect_to item_path(@item)
@@ -52,7 +53,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :location, :reference_number, :comments)
+    params.require(:item).permit(:name, :location, :reference_number, :comments, :photo)
   end
 
   def item_locations
