@@ -13,6 +13,9 @@
 .item-photo {
   padding: 20px;
 }
+.item-photo:hover {
+  cursor: pointer;
+}
 .item-body {
   flex: 1 1 auto;
 }

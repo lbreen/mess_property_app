@@ -6,10 +6,10 @@
     <div class="col-xs-12">
       <h1><%= @item.name %></h1>
     </div>
-    <div class="col-xs-6">
-      <%= display_item_photo(@item, {classes: 'photo-large'}) %>
+    <div class="col-xs-4">
+      <%= display_item_photo(@item, {classes: "photo-fill"}) %>
     </div>
-    <div class="col-xs-6">
+    <div class="col-xs-8">
       <ul>
         <li>Location: <%= @item.location %></li>
         <li>Ref number: <%= @item.reference_number %></li>
