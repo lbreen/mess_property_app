@@ -7,12 +7,50 @@
   <div class="row">
     <div class="col-xs-12">
       <% @items.each do |item| %>
-        <strong><%= link_to item.name, item_path(item) %></strong>
-        <ul>
-          <li>Location: <%= item.location %></li>
-          <li>Ref number: <%= item.reference_number %></li>
-        </ul>
+        <div class="item" id="<%= item.id %>-item">
+          <div class="item-photo" data-toggle="modal" data-target="#<%= item.id %>-photoModal" id="<%= item.id %>-item-photo">
+            <%= display_item_photo(item, {classes: 'photo-small'}) %>
+          </div>
+          <div class="item-body">
+            <%= link_to item_path(item), class: "item-body-link" do %>
+              <div class="item-title">
+                <%= item.name %>
+              </div>
+              <ul class="item-details">
+                <li>Location: <%= item.location %></li>
+                <li>Ref number: <%= item.reference_number %></li>
+              </ul>
+            <% end %>
+          </div>
+          <%= render 'item_photo_modal', item: item %>
+        </div>
       <% end %>
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", () => {
+    // const isModalVisible = () => {
+
+    //   document.querySelectorAll('.modal').forEach((modal) => {
+    //       if (modal.classList[2] == 'in') {
+    //       return true;
+    //       }
+    //   });
+    // }
+
+    // function grow() {
+    //   this.classList.add("item-grow");
+    // };
+
+    // function shrink() {
+    //   this.classList.remove("item-grow");
+    // };
+
+    // document.querySelectorAll('.item').forEach((item) => {
+    //   item.addEventListener('mouseover', grow);
+    //   item.addEventListener('mouseout', shrink);
+    // });
+  });
+</script>

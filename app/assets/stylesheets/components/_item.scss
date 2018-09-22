@@ -1,0 +1,38 @@
+.item {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  margin: 10px 0;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+  background-color: white;
+}
+.item-grow {
+  transform: scale(1.01);
+}
+.item-photo {
+  padding: 20px;
+}
+.item-body {
+  flex: 1 1 auto;
+}
+.item-body-link {
+  color: inherit;
+}
+.item-body-link:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.item-title {
+  font-size: 24px;
+}
+.item-details {
+  font-size: 18px;
+}
+.fade-in {
+  opacity: 0;
+  transition: all .75s ease;
+}
+.fade-in.show {
+  opacity: 1;
+}
