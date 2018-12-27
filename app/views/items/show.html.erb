@@ -1,7 +1,9 @@
 <div class="container padded">
   <div class="row">
     <div class="col-xs-12">
-      <%= link_to 'All items', items_path %>
+      <%= link_to items_path, class: "link" do %>
+        <p><i class="fa fa-arrow-circle-left"></i> Back to all items</p>
+      <% end %>
     </div>
     <div class="col-xs-12">
       <h1><%= @item.name %></h1>

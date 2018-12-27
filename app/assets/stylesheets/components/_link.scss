@@ -1,0 +1,10 @@
+.link {
+  color: $gray;
+}
+.link:hover{
+  text-decoration: none;
+  p {
+    color: $gray;
+    opacity: 0.6;
+  }
+}
