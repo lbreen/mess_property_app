@@ -3,10 +3,16 @@
   padding: 20px;
   border-radius: 5px;
   margin: 40px 0;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 .break-line {
   color: #E8E8E8;
   border: 1px solid;
   flex-grow: 1;
   margin: 20px;
+}
+.homepage-card-icon {
+  margin: 24px;
 }

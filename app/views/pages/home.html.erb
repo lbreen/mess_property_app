@@ -1,9 +1,31 @@
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.6) 50%), url('https://res.cloudinary.com/www-crossfitwatchman-com/image/upload/v1543751696/background.jpg');">
+  <div class="banner-content">
+      <div id="search-bar">
+        <%= form_tag items_path, method: :get do  %>
+          <div class="search-actions">
+            <%= text_field_tag :query, params[:query], class: "form-control", id: "search-field", placeholder: "Search for an item..." %>
+            <%= button_tag type: "submit", class: "search-btn btn btn-primary" do %>
+              <i class="fas fa-search"></i>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+  </div>
+</div>
+
 <div class="container">
   <div class="row">
     <div class="col-xs-12 text-center">
-      <% if user_signed_in? %>
-        <%= link_to 'All items', items_path, class: "btn btn-primary" %>
-      <% end %>
+
+    </div>
+    <div class="col-xs-4 text-center">
+      <%= render 'homepage-card', text: "All items", icon: "fa fa-cog" %>
+    </div>
+    <div class="col-xs-4 text-center">
+      <%= render 'homepage-card', text: "Battle Honours", icon: "fa fa-cog" %>
+    </div>
+    <div class="col-xs-4 text-center">
+      <%= render 'homepage-card', text: "Admin dashboard", icon: "fa fa-cog" %>
     </div>
   </div>
 </div>
